@@ -1,0 +1,118 @@
+/* App.css */
+:root {
+  --primary-text: #2d3436;
+  --background-light: rgba(255, 255, 255, 0.95);
+  --section-background: #f0f0f0;
+  --text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  --content-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+  color: var(--primary-text);
+}
+
+.parallax-wrapper {
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.parallax-header {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  text-shadow: var(--text-shadow);
+  animation: fadeIn 1s ease-out;
+}
+
+.parallax-section {
+  position: relative;
+  height: 100vh;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.content {
+  background: var(--background-light);
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: var(--content-shadow);
+  max-width: 600px;
+  backdrop-filter: blur(2px);
+}
+
+h1 {
+  font-size: 4rem;
+  margin: 0;
+  letter-spacing: 3px;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  font-weight: 300;
+}
+
+h2 {
+  margin: 0 0 1rem 0;
+  color: var(--primary-text);
+  font-size: 2.2rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .content {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .parallax-section {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
